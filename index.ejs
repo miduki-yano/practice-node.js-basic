@@ -4,27 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title %></title>
-    <style>
-        h1 {
-            font-size: 60pt;
-            color: #000;
-            text-align: right;
-        }
+    <!--<link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/
+        bootstrap.min.css"
+    crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    crossorigin="anonymous">
 
-        body {
-            font-size: 14pt;
-            color: #000;
-            margin: 5px;
-        }
-    </style>
+    <!--Bootstrap--------
+    <body class="container">
+    <h1 class="display=4">とかが使えるようになる
+    -->
 </head>
-<body>
+<body class="container">
     <header>
-        <h1><%=title %></h1>
+        <h1 class="display-4"><%=title %></h1>
     </header>
     <div role="main">
-        <p>Te amo</p>
-        <P><%=content %></P>
+        <p><%=content %></p>
+        <table class="table">
+            <tr>
+                <th>伝言です！</th>
+            </tr>
+            <tr>
+                <td><%=data.msg %></td>
+            </tr>
+        </table>
+        <form method="post" action="/">
+            <div class="form-group">
+                <label for="msg">MESSAGE</label>
+                <input type="text" name="msg" id="msg" class="form-control">
+            </div>
+            <input type="submit" value="送信" class="btn btn-primary">
+        </form>
+
+        <!--
+        <p><%=content %></p>
+            <% var id = 0; %>
+            <% for(var key in data) { %>
+                <%- include('data_item',
+                {id:++id, key:key, val:[data[key]]}) %>
+            <% } %>
+        -->
+            <!--
+            <% for(var key in data) { %>
+            <tr>
+                <th><%=key %></th>
+                <td><%=data[key] %></td>
+            </tr>
+            <% } %>
+            -->
+        <!--
+        <form method="post" action="/other">
+            <input type="text" name="msg" class="form-control">
+            <input type="submit" value="Click" class="btn btn-primary">
+        </form>
+        -->
+        <!--<p><a href="/other">Other Pageに移動&gt;&gt;</a></p>-->
     </div>
 </body>
 </html>
