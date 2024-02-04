@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "ejs": "^3.1.9"
+    "ejs": "^3.1.9",
+    "undici": "^6.6.0",
+    "undici-types": "^6.6.0"
   }
 }
